@@ -1,0 +1,21 @@
+<nav id="my-first">
+    <ul>
+        <li class="logotype">
+            <a href="#banner">Bible-Verse</a>
+        </li>
+        <li class="burger" (click)="toggleMenu()">
+            <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
+        </li>
+        <li class="menu" [class.is-open]="isMenuOpen">
+            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#about" class="menu-item">About</a>
+            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#work-exp"
+                class="menu-item">Experience</a>
+            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#certifications"
+                class="menu-item">Certifications</a>
+            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#projects"
+                class="menu-item">Projects</a>
+                <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#courses"
+                class="menu-item">Courses</a>
+        </li>
+    </ul>
+</nav>
