@@ -17,7 +17,7 @@ public class VerseController {
 	private VerseServiceImpl service;
 	
 	@GetMapping("find/{id}")
-	public Verse getVerseById(@PathVariable("verseId") int id){
+	public Verse getVerseById(@PathVariable("id") int id){
 		Verse verse = service.getVerse(id).get();
 		
 		return verse;
