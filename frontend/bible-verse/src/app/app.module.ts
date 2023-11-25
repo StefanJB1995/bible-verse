@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { VerseComponent } from './verse/verse.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VerseComponent } from './verse/verse.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
