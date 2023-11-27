@@ -1,8 +1,12 @@
 <div [@slideIn] class="wrapper">
-    <div class="verse-container">
-        <h2> {{verse.chapter}}</h2>
+    <div class="verse-container" >
+        <h2 *ngIf="verse.chapter != null"> {{verse.chapter}}</h2>
         <!-- <h3>{{verse.chapter}}</h3> -->
-        <p>{{verse.verse}}</p>
+        <p *ngIf="verse.chapter != null">{{verse.verse}}</p>
+
+        <h2 *ngIf="verse.chapter === ''"> Unable to load</h2>
+        <!-- <h3>{{verse.chapter}}</h3> -->
+        <p *ngIf="verse.chapter === ''">Please retry again.</p>
 
     </div>
 </div>

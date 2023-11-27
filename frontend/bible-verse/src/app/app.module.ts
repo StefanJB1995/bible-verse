@@ -8,19 +8,23 @@ import { HeaderComponent } from './header/header.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { VerseComponent } from './verse/verse.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    VerseComponent
+    VerseComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxPageScrollModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
