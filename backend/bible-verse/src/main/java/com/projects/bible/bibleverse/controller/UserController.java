@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projects.bible.bibleverse.model.User;
@@ -34,8 +35,8 @@ public class UserController {
 	}
 	
 	@PostMapping("login")
-	public ResponseEntity<Optional<User>> login(@RequestBody User user) {
-		return new ResponseEntity<Optional<User>>(service.loginUser(user.getUsername(), user.getPassword()), HttpStatus.OK);
+	public ResponseEntity<Optional<User>> login(@RequestParam String username, @RequestParam String password) {
+		return new ResponseEntity<Optional<User>>(service.loginUser(username, password), HttpStatus.OK);
 	}
 	
 	private String encryptPassword(String password) {
