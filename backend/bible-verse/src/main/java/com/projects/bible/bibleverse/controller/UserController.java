@@ -34,9 +34,15 @@ public class UserController {
 		return encryptPassword(password);
 	}
 	
+//	@PostMapping("login")
+//	public ResponseEntity<Optional<User>> login(@RequestParam String username, @RequestParam String password) {
+//		return new ResponseEntity<Optional<User>>(service.loginUser(username, password), HttpStatus.OK);
+//	}
+	
 	@PostMapping("login")
-	public ResponseEntity<Optional<User>> login(@RequestParam String username, @RequestParam String password) {
-		return new ResponseEntity<Optional<User>>(service.loginUser(username, password), HttpStatus.OK);
+	public ResponseEntity<Optional<User>> login(@RequestBody User user) {
+		String encryptedPass = encryptPassword(user.getPassword());
+		return new ResponseEntity<Optional<User>>(service.loginUser(user.getUsername(), encryptedPass), HttpStatus.OK);
 	}
 	
 	private String encryptPassword(String password) {

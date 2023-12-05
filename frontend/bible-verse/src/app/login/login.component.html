@@ -11,6 +11,8 @@
         <div class="button-container">
             <button (click)="handleLogin()" class="btn btn-success">Login</button>
         </div>
+
+        <p *ngIf="errorMessage">{{errorMessage}}</p>
         
     </div>
 
