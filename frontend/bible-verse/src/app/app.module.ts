@@ -10,13 +10,15 @@ import { VerseComponent } from './verse/verse.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { PillTrackerComponent } from './pill-tracker/pill-tracker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     VerseComponent,
-    LoginComponent
+    LoginComponent,
+    PillTrackerComponent
   ],
   imports: [
     BrowserModule,

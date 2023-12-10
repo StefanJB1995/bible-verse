@@ -24,4 +24,17 @@ export class UserService {
     logout(){
         sessionStorage.removeItem('user');
     }
+
+    getUser() {
+        let user = JSON.parse(sessionStorage.getItem('user') || '{}');
+        return user;
+    }
+
+    checkSpecial() {
+        let user = JSON.parse(sessionStorage.getItem('user') || '{}');
+        if(user.isSpecial > 0){
+            return 1;
+        }
+        return 0;
+    }
 }

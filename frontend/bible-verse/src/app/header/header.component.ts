@@ -10,13 +10,13 @@ import { UserService } from '../service/user-service';
 export class HeaderComponent implements OnInit {
   isMenuOpen = false;
 
-  user = JSON.parse(sessionStorage.getItem('user') || '{}');
+  //user = JSON.parse(sessionStorage.getItem('user') || '{}');
   
 
   constructor(public service: UserService) { }
 
   ngOnInit(): void {
-    console.log(this.user.username)
+    //console.log(this.user.username)
   }
 
   toggleMenu(): void {
