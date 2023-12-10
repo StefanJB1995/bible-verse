@@ -15,4 +15,13 @@ export class UserService {
     loginUser(user: User): Observable<User> {
         return this.httpClient.post<User>(`${this.url}/login`, user)
     }
+
+    isLoggedIn() {
+        let user = sessionStorage.getItem('user');
+        return !(user === null);
+    }
+
+    logout(){
+        sessionStorage.removeItem('user');
+    }
 }

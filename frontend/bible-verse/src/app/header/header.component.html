@@ -7,13 +7,15 @@
             <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
         </li>
         <li class="menu" [class.is-open]="isMenuOpen">
-            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" routerLink=""
-                class="menu-item">Home</a>
+            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" routerLink="" class="menu-item">Home</a>
+            <a *ngIf="service.isLoggedIn() && user.isSpecial > 0" (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" routerLink="" class="menu-item">Pill Tracker</a>
             <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#about" class="menu-item">About</a>
             <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" href="#certifications"
                 class="menu-item">Contact Us</a>
-            <a (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" routerLink="login"
+            <a *ngIf="!service.isLoggedIn()" (click)="toggleMenu()" pageScroll [pageScrollDuration]="500" routerLink="login"
                 class="menu-item">Login</a>
+            <a *ngIf="service.isLoggedIn()" (click)="toggleMenu(); logout()" pageScroll [pageScrollDuration]="500" routerLink="login"
+                class="menu-item">Logout</a>
         </li>
     </ul>
 </nav>
