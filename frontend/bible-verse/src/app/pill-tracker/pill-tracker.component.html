@@ -1,18 +1,18 @@
 <div id="pillPage">
     <h1>Pill Tracker</h1>
 
-    <button class="taken-button" mat-raised-button color="primary">Primary</button>
+    <button (click)="addDate()" class="taken-button" mat-raised-button color="primary">Primary</button>
 
     <table>
         <tr>
             <th>Name</th>
             <th>Date</th>
-            <th>Pill</th>
+            <th *ngIf="user.isSpecial == 1">DELETE</th>
         </tr>
         <tr *ngFor="let pill of pillList">
             <td>{{pill.username}}</td>
             <td>{{pill.dateTaken | date: "dd/MM/yyy HH:mm"}}</td>
-            <td>taken</td>
+            <td *ngIf="user.isSpecial == 1"><button mat-raised-button color="warn">X</button></td>
         </tr>
     </table>
 </div>
